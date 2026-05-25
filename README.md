@@ -1,41 +1,36 @@
-# Fullstack Interview Machine Test Submissions
+Backend
 
-This repository is used to collect and organize machine test code submissions from candidates.
+Start Application in development: npm run dev
 
-## Purpose
+Endpoints
 
-- Store candidate coding challenge solutions in a standardized location
-- Make review and evaluation easier for interviewers and hiring teams
-- Keep candidate submissions isolated and traceable
+POST /tasks - create a task
 
-## Submission Guidelines
+payload
+{
+    title: "string",
+    description: "string",
+    status: "string",[pending, in-progress, completed]
+    category: "string", [work personal , shoping, others]
+}
 
-1. Create a new folder with your name or candidate identifier.
-2. Add your solution files inside that folder.
-3. Include a short description of the submission and any run instructions.
-4. If your solution requires installation or build steps, include them in a `README.md` inside your submission folder.
+Get /tasks - get all tasks by pagination and search
 
-## Folder Structure Example
 
-```
-fullstack-interview/
-  ├── candidate-name-1/
-  │   ├── README.md
-  │   ├── solution-file-1.js
-  │   └── solution-file-2.py
-  ├── candidate-name-2/
-  │   ├── README.md
-  │   └── app/
-  └── README.md
-```
+PATCH /tasks/id - Edit a task
 
-## Review Process
+payload
+{
+    title: "string",
+    description: "string",
+    status: "string",[pending, in-progress, completed]
+    category: "string", [work personal , shoping, others]
+}
 
-- Interviewers can review each candidate folder independently.
-- Use the folder name to link the submission to the candidate.
-- Check the provided instructions for how to run or test the code.
+Delete /tasks/id - Delete a task
 
-## Notes
+PATCH /tasks/stats - Get  task statistics
 
-- Do not commit unrelated files or dependencies unless required for the submission.
-- Keep solutions clean and focused on the requested machine test.
+Frontend
+install dependencies : npm i
+start app in dev mode : npm run dev
